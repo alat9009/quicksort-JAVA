@@ -35,7 +35,7 @@ public class QuickSort {
                     for (long value : array) {
                         System.out.print(value + " ");
                     }
-                    System.out.println(); // Print a newline for better formatting
+                    System.out.println(); 
                 }
 
                 System.out.println("\n1. Try again 2. Exit");
@@ -51,6 +51,7 @@ public class QuickSort {
         sc.close();
     }
 
+    // Recursive method to perform quicksort on the array
     public static void quickSort(long[] array, int low, int high, int pivotChoice) {
         if (low < high) {
             int pivot = partition(array, low, high, pivotChoice);
@@ -59,6 +60,7 @@ public class QuickSort {
         }
     }
 
+    // Partition the array based on the chosen pivot element
     public static int partition(long[] array, int low, int high, int pivotChoice) {
         long pivot = array[high]; // Default to last element
         int pivotIndex = high;
@@ -93,6 +95,7 @@ public class QuickSort {
         return i + 1;
     }
 
+    // Helper method to swap two elements in the array
     private static void swap(long[] array, int i, int j) {
         long temp = array[i];
         array[i] = array[j];
