@@ -15,7 +15,7 @@ public class QuickSort {
                 long[] array = new long[n];
                 
                 for (int i = 0; i < n; i++) {
-                    array[i] = rand.nextLong() % (n * 10L); // Generate random long integers
+                    array[i] = rand.nextLong() % (System.currentTimeMillis() * 10L); // Generate random long integers using current time
                 }
                 System.out.println("Array created!");
 
