@@ -19,7 +19,7 @@ public class QuickSort {
                 }
                 System.out.println("Array created!");
 
-                System.out.println("Choose pivot: 1. First element 2. Last element 3. Random element");
+                System.out.println("Choose pivot: 1. First element 2. Last element 3. Random element 4. Median of three elements");
                 int pivotChoice = sc.nextInt();
 
                 long startTime = System.currentTimeMillis();
@@ -76,6 +76,10 @@ public class QuickSort {
                 pivotIndex = low + rand.nextInt(high - low);
                 pivot = array[pivotIndex];
                 break;
+            case 4:
+                pivotIndex = medianOfThree(array, low, high);
+                pivot = array[pivotIndex];
+                break;
             default:
                 System.out.println("Invalid pivot choice, defaulting to last element.");
                 break;
@@ -100,5 +104,20 @@ public class QuickSort {
         long temp = array[i];
         array[i] = array[j];
         array[j] = temp;
+    }
+    // Helper method to find the median of three numbers
+    private static int medianOfThree(long[] array, int low, int high) {
+        int middle = (low + high) / 2;
+
+        if (array[low] > array[middle])
+            swap(array, low, middle);
+
+        if (array[low] > array[high])
+            swap(array, low, high);
+
+        if (array[middle] > array[high])
+            swap(array, middle, high);
+
+        return middle;
     }
 }
