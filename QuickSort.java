@@ -108,16 +108,19 @@ public class QuickSort {
     // Helper method to find the median of three numbers
     private static int medianOfThree(long[] array, int low, int high) {
         int middle = (low + high) / 2;
-
         if (array[low] > array[middle])
-            swap(array, low, middle);
-
-        if (array[low] > array[high])
-            swap(array, low, high);
-
-        if (array[middle] > array[high])
-            swap(array, middle, high);
-
-        return middle;
+            if (array[middle] > array[high])
+                return middle;
+            else if (array[low] > array[high])
+                return high;
+            else
+                return low;
+        else
+            if (array[low] > array[high])
+                return low;
+            else if (array[middle] > array[high])
+                return high;
+            else
+                return middle;
     }
 }
