@@ -73,7 +73,7 @@ public class QuickSort {
             case 2:
                 break; // already set to last element
             case 3:
-                pivotIndex = low + rand.nextInt(high - low);
+                pivotIndex = low + rand.nextInt(high - low + 1);
                 pivot = array[pivotIndex];
                 break;
             case 4:
